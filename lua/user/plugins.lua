@@ -56,20 +56,26 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-cmdline"
   use "saadparwaiz1/cmp_luasnip"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
 
   -- snippets
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
   use "andy-blum/smart-drupal-snippets"
+  use "rrethy/vim-illuminate"
 
   --fonts
   use "ryanoasis/vim-devicons"
   
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
+
   -- LSP
   use "neovim/nvim-lspconfig"
-  use "williamboman/nvim-lsp-installer"
-  use "onsails/lspkind-nvim"
- 
+  use "williamboman/mason-lspconfig.nvim"
+  use "williamboman/mason.nvim"
+  use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions 
   use "nvim-treesitter/nvim-treesitter"
 
   -- Automatically set up your configuration after cloning packer.nvim

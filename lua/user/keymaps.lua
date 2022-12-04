@@ -41,6 +41,7 @@ keymap("n", "<C-h>", ":bprevious<CR>", opts)
 -- Press jj fast to enter
 keymap("i", "jj", "<ESC>", opts)
 keymap("v", "vv", "<ESC>", opts)
+keymap("c", "vv", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -54,15 +55,11 @@ keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "∆", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "˚", ":move '<-2<CR>gv-gv", opts)
 
 -- Visual Block --
 -- Move text up and down
-keymap("n", "J", ":move .+1<CR>==", opts)
-keymap("n", "K", ":move .-2<CR>==", opts)
 keymap("n", "∆", ":move .+1<CR>==", opts)
 keymap("n", "˚", ":move .-2<CR>==", opts)
 keymap("i", "∆", "<Esc>:move .+1<CR>==gi", opts)
@@ -74,3 +71,8 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+
+-- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
