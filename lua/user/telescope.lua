@@ -9,7 +9,15 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-
+    ripgrep_arguments = {
+      'rg',
+      '--hidden',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case'
+    },
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
@@ -44,6 +52,7 @@ telescope.setup {
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
         ["<C-l>"] = actions.complete_tag,
         ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
+        ["<esc>"] = actions.close,
       },
 
       n = {
@@ -79,7 +88,7 @@ telescope.setup {
       },
     },
   },
-  -- pickers = {
+  pickers = {
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
@@ -87,7 +96,7 @@ telescope.setup {
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
-  -- },
+  },
   extensions = {
     -- media_files = {
     --     -- filetypes whitelist

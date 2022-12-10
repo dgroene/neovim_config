@@ -20,12 +20,10 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<S-h>", "<C-w>h", opts)
-keymap("n", "<S-j>", "<C-w>j", opts)
-keymap("n", "<S-k>", "<C-w>k", opts)
-keymap("n", "<S-l>", "<C-w>l", opts)
-
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
 keymap("n", "<S-Up>", ":resize +2<CR>", opts)
@@ -34,8 +32,8 @@ keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<C-l>", ":bnext<CR>", opts)
-keymap("n", "<C-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Insert --
 -- Press jj fast to enter
@@ -72,7 +70,22 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
-
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false, no_ignore = true }))<cr>", opts)
+keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>s", ":SearchSession<CR>", opts)
+
+
+-- Nvimtree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+-- DAP
+keymap("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl_open()<cr>", opts)
+keymap("n", "<leader>rl", "<cmd>lua require'dap'.run_last()<cr>", opts)
+keymap("n", "<leader>rn", "<cmd>lua require'dap'.run()<cr>", opts)
+keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
+keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", opts)
+keymap("n", "<F11>", "<cmd>lua require'dap'.step_into()<cr>", opts)
+keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>", opts)
+

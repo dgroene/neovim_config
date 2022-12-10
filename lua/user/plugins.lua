@@ -44,10 +44,25 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "windwp/nvim-autopairs"
+  use "kyazdani42/nvim-web-devicons"
+  use "kyazdani42/nvim-tree.lua"
+  use "moll/vim-bbye"
+  use "akinsho/toggleterm.nvim"
+
+  -- Session Management
+  use "rmagatti/auto-session"
+  use "rmagatti/session-lens"
+
+  -- Status bars
+  use "akinsho/bufferline.nvim"
+  use 'feline-nvim/feline.nvim'
+
+  -- Surround
+  use "kylechui/nvim-surround"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
   use "sainnhe/everforest"
 
   -- completion plugins
@@ -58,6 +73,9 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip"
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
+
+  -- Git
+  use 'lewis6991/gitsigns.nvim'
 
   -- snippets
   use "L3MON4D3/LuaSnip"
@@ -75,8 +93,23 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig"
   use "williamboman/mason-lspconfig.nvim"
   use "williamboman/mason.nvim"
-  use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions 
-  use "nvim-treesitter/nvim-treesitter"
+--  use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions 
+  use "folke/trouble.nvim"
+  use "jose-elias-alvarez/null-ls.nvim"
+
+  -- DAP
+  use 'mfussenegger/nvim-dap'
+  use 'rcarriga/nvim-dap-ui'
+
+  -- Treesitter
+  use { 
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "p00f/nvim-ts-rainbow"
+
+  -- Gihub copilot
+  use "github/copilot.vim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

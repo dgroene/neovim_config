@@ -14,6 +14,14 @@ null_ls.setup({
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
+    null_ls.builtins.diagnostics.phpcs.with({ -- Change how the php linting will work
+            prefer_local = "vendor/bin",
+            extra_args = { "--standard=Drupal" },
+        }),
+    null_ls.builtins.formatting.phpcbf.with({ -- Use the local installation first
+            prefer_local = "vendor/bin",
+            extra_args = { "--standard=Drupal" },
+        }),
     -- diagnostics.flake8
 	},
 })
