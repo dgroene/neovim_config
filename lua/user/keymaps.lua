@@ -96,3 +96,8 @@ keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", opts)
 keymap("n", "<F11>", "<cmd>lua require'dap'.step_into()<cr>", opts)
 keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>", opts)
 
+-- Copy/paste using the System clipboard
+keymap("v", "<leader>y", "\"*y", opts)
+keymap("v", "<leader>yy", "\"*yy", opts)
+keymap("n", "<leader>p", "\"*p", opts)
+keymap("n", "<leader><S-p>", "\"*P", opts)
