@@ -19,6 +19,9 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
+keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, noremap = true })
+keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, noremap = true })
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -38,6 +41,8 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Insert --
 -- Press jj fast to enter
 keymap("i", "jj", "<ESC>", opts)
+keymap("i", ";;", "<ESC>A;", opts)
+keymap("i", ",,", "<ESC>A,", opts)
 keymap("v", "vv", "<ESC>", opts)
 keymap("c", "vv", "<ESC>", opts)
 
@@ -50,6 +55,8 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "∆", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "˚", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "p", '"_dP', opts)
+
+keymap('v', 'y', 'myy`y', opts)
 
 -- Visual Block --
 -- Move text up and down

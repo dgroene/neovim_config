@@ -1,6 +1,6 @@
 local options = {
   background = "light",
-  backup = false,                          -- creates a backup file
+  backup = true,                           -- creates a backup file
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 2,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
@@ -34,8 +34,14 @@ local options = {
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  wildmode = "longest:full,full",          -- Command-line completion mode
+  spell = true,
+  confirm = true,
+  -- clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 }
 
+vim.opt.backupdir:remove('.')
+vim.opt.fillchars:append({ eob = " " }) -- make it so that there's no ~ at the end of the buffer
 vim.opt.shortmess:append "c"
 vim.g.copilot_assume_mapped = true
 
