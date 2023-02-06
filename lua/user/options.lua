@@ -35,7 +35,7 @@ local options = {
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   wildmode = "longest:full,full",          -- Command-line completion mode
-  spell = true,
+  spell = false,
   confirm = true,
   -- clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 }
