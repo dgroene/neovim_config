@@ -43,7 +43,6 @@ local options = {
 vim.opt.backupdir:remove('.')
 vim.opt.fillchars:append({ eob = " " }) -- make it so that there's no ~ at the end of the buffer
 vim.opt.shortmess:append "c"
-vim.g.copilot_assume_mapped = true
 
 for k, v in pairs(options) do
   vim.opt[k] = v
