@@ -50,6 +50,12 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use "akinsho/toggleterm.nvim"
 
+  -- Commenting
+  use "tpope/vim-commentary" -- Commenting
+
+  -- Scrolling
+  use "karb94/neoscroll.nvim" -- Smooth scrolling
+
   -- Session Management
   use "rmagatti/auto-session"
   use "rmagatti/session-lens"
@@ -87,7 +93,11 @@ return packer.startup(function(use)
   use "ryanoasis/vim-devicons"
   
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  use { "nvim-telescope/telescope.nvim",
+    requires = {
+      { "nvim-telescope/telescope-live-grep-args.nvim" },
+    }
+  }
 
   -- LSP
   use "neovim/nvim-lspconfig"
