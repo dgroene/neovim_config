@@ -3,14 +3,19 @@ if not status_ok then
     print("gitsigns not found")
     return
 end
+  vim.keymap.set('n', '[h', ':Gitsigns next_hunk<CR>', {noremap = true, silent = true})
+  vim.keymap.set('n', ']h', ':Gitsigns prev_hunk<CR>', {noremap = true, silent = true})
+  vim.keymap.set('n', 'gs', ':Gitsigns stage_hunk<CR>', {noremap = true, silent = true})
+  vim.keymap.set('n', 'gS', ':Gitsigns undo_stage_hunk<CR>', {noremap = true, silent = true})
+  vim.keymap.set('n', 'gp', ':Gitsigns preview_hunk<CR>', {noremap = true, silent = true})
 require('gitsigns').setup {
   signs = {
-    add          = { hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
-    change       = { hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
+    add          = { hl = 'GitSignsAdd'   , text = '█', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
+    change       = { hl = 'GitSignsChange', text = '█', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
     delete       = { hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
     topdelete    = { hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
     changedelete = { hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
-    untracked    = { hl = 'GitSignsAdd'   , text = '┆', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
+    untracked    = { hl = 'GitSignsAdd'   , text = '▒', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
   },
   signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
   numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
@@ -21,7 +26,7 @@ require('gitsigns').setup {
     follow_files = true
   },
   attach_to_untracked = true,
-  current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+  current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
   current_line_blame_opts = {
     virt_text = true,
     virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'

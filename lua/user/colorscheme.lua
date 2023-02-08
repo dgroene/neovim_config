@@ -7,3 +7,6 @@ if not status_ok then
 end
 
 vim.api.nvim_set_hl(0, "NvimTreeIndentMarker", { fg = "#D3D3D3" })
+vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#D3D3D3" })
+vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#A7C080"})
+vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#D699B6"})

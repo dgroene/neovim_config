@@ -53,6 +53,9 @@ return packer.startup(function(use)
   -- Commenting
   use "tpope/vim-commentary" -- Commenting
 
+  -- Indentation
+  use "lukas-reineke/indent-blankline.nvim" -- Indentation:
+
   -- Scrolling
   use "karb94/neoscroll.nvim" -- Smooth scrolling
 

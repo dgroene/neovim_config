@@ -4,5 +4,7 @@ if not status_ok then
 end
 
 require("neoscroll").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
+  -- Configuration here, or leave empty to use defaults
+  filetype_exclude = { "help", "terminal", "dashboard", "packer", "lspinfo", "telescopePrompt", "NvimTree", "TelescopeResults" },
+  buftype_exclude = { "terminal", "NvimTree" },
+})
