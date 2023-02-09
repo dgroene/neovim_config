@@ -18,7 +18,7 @@ bufferline.setup {
     },
     buffer_close_icon = "",
     -- buffer_close_icon = '',
-    modified_icon = "●",
+    modified_icon = "",
     close_icon = "",
     -- close_icon = '',
     left_trunc_marker = "",
@@ -73,9 +73,10 @@ bufferline.setup {
       left = function()
         return {
           {
-            text = "  ",
-            guifg = "#0678be",
+            text = "  ",
+            guifg = "#83C092",
             guibg = "#FDF6E3",
+            gui = "bold",
             padding = 0,
           },
         }
@@ -86,4 +87,15 @@ bufferline.setup {
     --   return buffer_a.modified > buffer_b.modified
     -- end
   },
+  highlights = {
+    modified = {
+      fg = "#83C092",
+    },
+    modified_visible = {
+      fg = "#83C092",
+    },
+    modified_selected = {
+      fg = "#83C092",
+    },
+  }
 }
