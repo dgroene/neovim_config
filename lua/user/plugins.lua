@@ -75,13 +75,18 @@ return packer.startup(function(use)
   use "sainnhe/everforest"
 
   -- completion plugins
-  use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-cmdline"
-  use "saadparwaiz1/cmp_luasnip"
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
+  use ({"hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+      "hrsh7th/cmp-nvim-lua",
+      "onsails/lspkind-nvim",
+    }
+  })
 
   -- Git
   use 'lewis6991/gitsigns.nvim'
@@ -103,12 +108,15 @@ return packer.startup(function(use)
   }
 
   -- LSP
-  use "neovim/nvim-lspconfig"
-  use "williamboman/mason-lspconfig.nvim"
-  use "williamboman/mason.nvim"
---  use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions 
+  use ({ "neovim/nvim-lspconfig",
+    requires = {
+      "williamboman/mason-lspconfig.nvim",
+      "williamboman/mason.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
+      "jayp0521/mason-null-ls.nvim",
+    }
+  })
   use "folke/trouble.nvim"
-  use "jose-elias-alvarez/null-ls.nvim"
 
   -- DAP
   use 'mfussenegger/nvim-dap'

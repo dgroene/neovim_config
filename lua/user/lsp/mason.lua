@@ -19,7 +19,7 @@ local servers = {
   -- "jsonls",
   -- "sumneko_lua",
   -- "clangd",
-  "intelephense",
+-- "intelephense",
   -- "cssls",
   -- "html",
   -- "tsserver",
