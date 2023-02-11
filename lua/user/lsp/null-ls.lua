@@ -13,18 +13,18 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
-	debug = false,
+	debug = true,
 	sources = {
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
     null_ls.builtins.diagnostics.phpcs.with({ -- Change how the php linting will work
-            extra_args = { "--standard=/Users/dgroene/.composer/vendor/drupal/coder/coder_sniffer/Drupal" },
+            extra_args = { "--standard=~/.composer/vendor/drupal/coder/coder_sniffer/Drupal" },
         }),
     null_ls.builtins.formatting.phpcbf.with({ -- Use the local installation first
-            extra_args = { "--standard=Drupal" },
+            extra_args = { "--standard=~/.composer/vendor/drupal/coder/coder_sniffer/Drupal" },
         }),
-    -- diagnostics.flake8
+    null_ls.builtins.diagnostics.twigcs,
 	},
 })
 
