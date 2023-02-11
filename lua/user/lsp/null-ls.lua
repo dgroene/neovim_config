@@ -24,7 +24,9 @@ null_ls.setup({
     null_ls.builtins.formatting.phpcbf.with({ -- Use the local installation first
             extra_args = { "--standard=~/.composer/vendor/drupal/coder/coder_sniffer/Drupal" },
         }),
-    null_ls.builtins.diagnostics.twigcs,
+    null_ls.builtins.diagnostics.twigcs.with({ -- Change how the php linting will work
+            extra_args = { "--twig-version=2" },
+        }),
 	},
 })
 
