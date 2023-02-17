@@ -122,6 +122,9 @@ return packer.startup(function(use)
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
 
+  -- Tests
+  use "vim-test/vim-test"
+
   -- Treesitter
   use { 
     "nvim-treesitter/nvim-treesitter",
